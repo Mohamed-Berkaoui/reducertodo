@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Todo from "./Todo";
+import { TodoStore } from "../TodoContext";
 
-function TodoList({ todos, dispatchTodos }) {
+function TodoList() {
+  const {todos}=useContext(TodoStore)
   return (
-    <div>
+    <div className="todo-list">
       {todos.map((todo) => (
         <Todo todo={todo} />
       ))}
